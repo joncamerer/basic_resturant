@@ -1,6 +1,6 @@
 <% if member_signed_in? %>
-  <h1>User Logged in!</h1>
   <%= link_to "Sign Out", destroy_member_session_path, method: :delete, class: 'btn btn-default' %>
+  <%= render "loyalty_account" %>
 <% else %>
   <div class="container">
     <div class="row">
@@ -18,7 +18,7 @@
        <div class="col col-md-4">
         <div class="well text-center">
           <h3>Sign up!</h3>
-          <p> Sign up for a Maggie's loyalty acctount today and find out what you've been missing!</p>
+          <p> Sign up for a Maggie's loyalty account today and find out what you've been missing!</p>
           <%= link_to "Sign Up", new_member_registration_path, class: 'btn btn-default' %>
         </div>
       </div>
