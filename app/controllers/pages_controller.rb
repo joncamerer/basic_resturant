@@ -6,4 +6,10 @@ class PagesController < ApplicationController
   def about
   end
   
+  def menu
+  end
+  
+  def loyalty
+  end
+  
 end

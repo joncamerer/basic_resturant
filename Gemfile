@@ -35,6 +35,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Bootstrap library for front-end UI and layout
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# Use Hirb for better database table display in console
+gem 'hirb', '0.7.3'
+
+# Use Devise to authenticate layalty members
+gem 'devise'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
