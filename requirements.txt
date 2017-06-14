@@ -1,0 +1,25 @@
+Pages_and_layout
+-Application
+    - Add Bootstrap top header
+    - Mobile accessiblity for whole site
+- Home
+    left side: cycle through promos/info/etc
+    - right side: about blurb 
+- Menu
+    Create menu database table, populate with fake items
+    Create controller for POST (admin only), SHOW
+    Make views for index, dummy page for POST
+    ** Eventually add in online ordering capability
+Locations
+    Embedded google maps to choose location (partial view, used in About)
+    After choosing location, display location specific page
+        locations database table?
+    Add location pictures and big map to individual views
+- Loyalty
+    - Create Main loyalty page
+    - Set up authentication for loyalty members
+    - Set up dummy page for Loyalty accounts 
+    ** Eventually use Member id for online ordering
+- About
+    - Set up to display "About Us" blurb
+    - Embed locations maps?
