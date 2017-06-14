@@ -7,7 +7,7 @@ Pages_and_layout
     - right side: about blurb 
 - Menu
     Create menu database table, populate with fake items
-    Create controller for POST (admin only), SHOW
+    Create controller for POST (admin only), INDEX
     Make views for index, dummy page for POST
     ** Eventually add in online ordering capability
 Locations

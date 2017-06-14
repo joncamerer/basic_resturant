@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :members, controllers: { registrations: 'members/registrations' }
+  root to: 'pages#home'
   resources :members do
     resource :account
   end
-  root to: 'pages#home'
   get 'about', to: 'pages#about'
   get 'loyalty', to: 'pages#loyalty'
-  get 'menu', to: 'pages#menu'
+  resources 'menu'
   get 'location', to: 'pages#location' 
 end
