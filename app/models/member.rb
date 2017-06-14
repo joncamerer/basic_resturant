@@ -4,5 +4,8 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-has_one :accounts 
+  has_one :accounts
+  
+  validates :card_number, presence: true, numericality: true
+  
 end
