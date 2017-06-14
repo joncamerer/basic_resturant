@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   
   
   private
+    # Allows additional categories for Devise sign up form
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:card_number])
     end
