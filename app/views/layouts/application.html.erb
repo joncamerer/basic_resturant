@@ -9,7 +9,7 @@
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
+      <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
@@ -25,6 +25,9 @@
         
         <div class="collapse navbar-collapse" id="main-nav-collapse">
           <ul class="nav navbar-nav navbar-right">
+            <% if member_signed_in? %>
+              <%= link_to "Sign Out", destroy_member_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
+            <% end %>
             <li><%= link_to "Menu", menu_index_path %></li>
             <li><%= link_to "Locations", location_path %></li>
             <li><%= link_to "Loyalty", loyalty_path %></li>

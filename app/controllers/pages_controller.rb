@@ -8,10 +8,6 @@ class PagesController < ApplicationController
   def about
   end
   
-  # GET to /menu
-  def menu
-  end
-  
   # GET to /loyalty
   def loyalty
   end
