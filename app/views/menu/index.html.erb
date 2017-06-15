@@ -1,2 +1,22 @@
-Re-routed menu page<br>
-<%= link_to "Create Menu Item", new_menu_path, class: 'btn btn-default' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <%= form_tag menu_index_path, method: "get" do %>
+        <%= select_tag 'category', options_for_select(['Appetizer', 'Salad/Soup', 'Pizza', 'Pasta', 'Sandwiches', 'Desert']), class: 'form-control' %>
+        <%= submit_tag 'Submit' %>
+      <% end %>
+      
+      <% if !@display_menu %>
+        <%= "Choose a category" %>
+      <% else %>  
+        <div class="well">
+          <%= @display_menu %>
+        </div>
+      <% end %>
+      
+      <%= link_to "Create Menu Item", new_menu_path, class: 'btn btn-default' %>
+
+    </div>
+  </div>
+</div>
