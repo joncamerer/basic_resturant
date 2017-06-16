@@ -22,6 +22,34 @@ body {
   padding-top: 70px;
 }
 
+// Typography Styling
+
+h1, h2, h3 {
+  font-family: 'Dosis', sans-serif;
+}
+
+// Navbar Styling
+
+.navbar {
+  background: #961515;
+}
+
+.navbar-brand {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+// Homepage Styling
+
+.home-callout {
+  padding-bottom: 25px;
+}
+
 // Flass Message Styling
 .alert {
   text-align: center;
@@ -37,4 +65,9 @@ body {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #3c763d;
+}
+
+.flash-container {
+  position: absolute;
+  width: 100%;
 }
