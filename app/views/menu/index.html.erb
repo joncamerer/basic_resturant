@@ -1,18 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-2">
 
-      <%= form_tag menu_index_path, method: "get" do %>
+      <%= form_for menu_index_path, method: "get" do %>
         <%= select_tag 'category', options_for_select(['Appetizer', 'Salad/Soup', 'Pizza', 'Pasta', 'Sandwiches', 'Desert']), class: 'form-control' %>
         <%= submit_tag 'Submit' %>
       <% end %>
       
       <% if !@display_menu %>
         <%= "Choose a category" %>
-      <% else %>  
-        <div class="well">
-          <%= @display_menu %>
-        </div>
+      <% else %> 
+        <h2 class="text-center"><%= @category %></h2>
+        <% @display_menu.each do |item| %>
+          <div class="well">  
+            <h3><%= item.name %></h2>
+            <p>$<%= item.price %></p>
+            <p><%= item.description %></p>
+          </div>
+        <% end %>
       <% end %>
       
       <%= link_to "Create Menu Item", new_menu_path, class: 'btn btn-default' %>
