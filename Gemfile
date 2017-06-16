@@ -41,6 +41,9 @@ gem 'hirb', '0.7.3'
 # Use Devise to authenticate layalty members
 gem 'devise'
 
+# Use Figaro for ENV
+gem 'figaro'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
