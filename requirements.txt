@@ -6,9 +6,9 @@ Pages_and_layout
     left side: cycle through promos/info/etc
     - right side: about blurb 
 - Menu
-    Create menu database table, populate with fake items
+    -Create menu database table, populate with fake items
     -Create controller for POST (admin only), INDEX
-    Make views for index, dummy page for POST
+    -Make views for index, dummy page for POST
     ** Eventually add in online ordering capability
 Locations
     Embedded google maps to choose location (partial view, used in About)

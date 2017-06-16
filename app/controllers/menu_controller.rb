@@ -24,7 +24,7 @@ class MenuController < ApplicationController
       redirect_to menu_index_path( type: @category )
     elsif params[:type]
       @menu_item = Menu.all
-      @display_menu = @menu_item.where( params[:category] )
+      @display_menu = @menu_item.where( "category = ?", params[:type] )
     end
   end
   
