@@ -40,13 +40,31 @@ h1, h2, h3 {
 }
 
 .navbar-default .navbar-brand,
+.navbar-default .navbar-toggle,
 .navbar-default .navbar-nav > li > a {
   color: white;
+  &:hover {
+    color: white;
+    opacity: .75;
+  }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle {
+  border: 2px solid white;
+  &:hover, &:focus{
+    background-color: #961515;
+    opacity: .75;
+  }
 }
 
 // Homepage Styling
 
 .home-callout {
+  padding-top: 40px;
   padding-bottom: 25px;
 }
 

@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <!-- Dropdown to select Menu category-->
-      <%= form_for menu_index_path, method: "get" do %>
-        <%= select_tag 'category', options_for_select(['Appetizer', 'Salad/Soup', 'Pizza', 'Pasta', 'Sandwiches', 'Desert']), class: 'form-control' %>
-        <%= submit_tag 'Submit' %>
-      <% end %>
-      
+          <!-- Dropdown to select Menu category-->
+          <%= form_tag menu_index_path, method: "get", class: "form-menu" do %>
+            <%= select_tag 'category', options_for_select(['Appetizer', 'Salad/Soup', 'Pizza', 'Pasta', 'Sandwiches', 'Desert']), class: 'form-control form-group' %>
+            <%= submit_tag 'Submit', class: 'btn btn-default' %>
+          <% end %>
+
       <!-- If category has not been selected -->
       <% if !@display_menu %>
         <%= "Choose a category" %>
