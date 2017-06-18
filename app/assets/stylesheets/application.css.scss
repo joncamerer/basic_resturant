@@ -20,6 +20,21 @@
 // Body Styling
 body {
   padding-top: 70px;
+  background-color: #FFF4E0;
+  color: #961515;
+}
+
+.well {
+  color: #756C5A !important; 
+  border-color: #44A896 !important;
+  border-radius: 0px !important;
+  background-color: rgba(245, 245, 245, .5) !important;
+    
+}
+
+.well-border {
+  border: 3px;
+  border-color: #44A896;
 }
 
 // Typography Styling
@@ -39,13 +54,19 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-.navbar-default .navbar-brand,
+.navbar-default .navbar-brand {
+  color: white;
+    &:hover {
+      color: white;
+      opacity: .75;
+    }
+}
+
 .navbar-default .navbar-toggle,
 .navbar-default .navbar-nav > li > a {
   color: white;
   &:hover {
-    color: white;
-    opacity: .75;
+    color: #44A896;
   }
 }
 
@@ -55,10 +76,15 @@ h1, h2, h3 {
 
 .navbar-default .navbar-toggle {
   border: 2px solid white;
+  background-color: #44A896;
   &:hover, &:focus{
-    background-color: #961515;
+    background-color: #44A896;
     opacity: .75;
   }
+}
+
+.btn-primary {
+  background-color: #44A896 !important;
 }
 
 // Homepage Styling

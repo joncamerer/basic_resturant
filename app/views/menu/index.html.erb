@@ -4,7 +4,7 @@
           <!-- Dropdown to select Menu category-->
           <%= form_tag menu_index_path, method: "get", class: "form-menu" do %>
             <%= select_tag 'category', options_for_select(['Appetizer', 'Salad/Soup', 'Pizza', 'Pasta', 'Sandwiches', 'Desert']), class: 'form-control form-group' %>
-            <%= submit_tag 'Submit', class: 'btn btn-default' %>
+            <%= submit_tag 'Submit', class: 'btn btn-primary' %>
           <% end %>
 
       <!-- If category has not been selected -->
@@ -23,7 +23,7 @@
       <% end %>
       
       <!-- Temporary link for development -->
-      <%= link_to "Create Menu Item", new_menu_path, class: 'btn btn-default' %>
+      <%= link_to "Create Menu Item", new_menu_path, class: 'btn btn-primary' %>
 
     </div>
   </div>
