@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :members, controllers: { registrations: 'members/registrations' }
+  devise_for :members, controllers: { registrations: 'members/registrations',
+  passwords: 'members/passwords' }
   root to: 'pages#home'
   resources :members do
     resource :account

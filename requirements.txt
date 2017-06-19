@@ -1,3 +1,21 @@
+Loyalty
+
+Fix the "Fo
+
+Create Accounts db linked to Memeber db by card number
+    - Make Accounts Table
+    
+Display account information to the user logged in
+    - Loyalty accounts can be "registered" to a logged in member
+        - Register your Account! button
+    - Give some kind of visual display of account status 
+        - Visit count 
+        - How close user is to reward, punches?, etc.
+Give user ability to edit their account information
+    - Change their password
+
+
+
 Pages_and_layout
 -Application
     - Add Bootstrap top header
