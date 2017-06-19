@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     
     # Redirect to loyalty_path when loyalty member signs up/in
     def after_sign_in_path_for(members)
-      loyalty_path( num: resource.card_number )    
+      edit_member_account_path( member_id: 1 )  
     end
     
     

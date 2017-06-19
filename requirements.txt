@@ -4,7 +4,7 @@ Fix the "Fo
 
 Create Accounts db linked to Memeber db by card number
     - Make Accounts Table
-    
+    - Accounts should exist Apart from Members
 Display account information to the user logged in
     - Loyalty accounts can be "registered" to a logged in member
         - Register your Account! button
