@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_member!
   
   
   private
@@ -13,7 +14,8 @@ class ApplicationController < ActionController::Base
     
     # Redirect to loyalty_path when loyalty member signs up/in
     def after_sign_in_path_for(members)
-      edit_member_account_path( member_id: 1 )  
+      @member = current_member.id
+      member_account_path( member_id: @member )
     end
     
     
