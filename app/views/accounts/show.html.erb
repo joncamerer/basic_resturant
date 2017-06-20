@@ -1,1 +1,7 @@
-Show Path
+Show Path<br>
+
+<%= "Logged in Member card no. : #{@card}" %><br>
+
+<%= @account.each do |account| %>
+  <%= "Account with same card no. : #{account.card_number}" %>
+<% end %>

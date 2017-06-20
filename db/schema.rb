@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614181546) do
+ActiveRecord::Schema.define(version: 20170620230721) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "member_id"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170614181546) do
     t.string   "last_name"
     t.integer  "visit_count"
     t.integer  "loyalty_points"
-    t.integer  "card_number"
+    t.string   "card_number"
     t.datetime "join_date"
     t.datetime "birthday"
     t.datetime "last_visit"

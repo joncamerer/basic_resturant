@@ -6,6 +6,6 @@ class Member < ApplicationRecord
 
   has_one :accounts
   
-  validates :card_number, presence: true, numericality: true
+  validates :card_number, presence: true, numericality: true, uniqueness: true
   
 end
