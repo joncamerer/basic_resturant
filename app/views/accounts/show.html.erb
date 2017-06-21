@@ -1,34 +1,17 @@
 <% content_for :title, "Loyalty" %>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+          
+      <% if @account.first_name.blank? or @account.last_name.blank? or @account.birthday.blank?  %>
+        <%= render "personal_info_form" %>
+      <% else %>
+        <%= "Hi #{@account.first_name} #{@account.last_name}!" %><br>
+      <% end %>
+      
+      <%= render "rewards" %> 
 
-<%= "Linked account: #{@account}" %><br><br>
-
-<% if @account != "blank" %>
-  
-  <%= "Logged in Member card no. #{@card}" %><br><br>
-  
-    <%= "Account with same card no. #{@account.card_number}" %><br>
-    <%= "Account Member ID no. #{@account.member_id}" %><br>
-    
-    <% if @account.first_name.blank? or @account.last_name.blank? or @account.birthday.blank?  %>
-      <%= "Tell us about yourself!" %>
-        <%= form_for @account, url: member_account_path, html: {method: :put} do |f| %>
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name%>
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name%>
-          <%= f.label :birthday %>
-          <%= f.date_field :birthday%>
-          <%= f.submit "submit" %>
-        <% end %>
-    <% else %>
-      <%= "Hi #{@account.first_name} #{@account.last_name}!" %><br>
-    <% end %>
-    
-    <%= render "rewards" %> 
-    
-
-
-<% else %>
-  Sign Up!
-<% end %>
+    </div>
+  </div>
+</div>
