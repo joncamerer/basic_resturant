@@ -1,0 +1,16 @@
+<%= "Rewards Partial" %><br>   
+   
+    <%= "Visits: #{@account.visit_count}" %><br>
+    <% if @account.visit_count == 1 %>
+      <%= "Bronze Member" %><br>
+    <% elsif @account.visit_count <= 20 %>
+      <%= "Silver Member" %><br>
+    <% elsif @account.visit_count > 20 %>
+      <%= "Gold Member" %><br>
+    <% end %>
+    
+    <% if @account.loyalty_points == "1" %>
+      <%= "You have credit for #{@account.loyalty_points} free slice!" %><br>
+    <% else %>
+      <%= "You have credit for #{@account.loyalty_points} free slices!" %><br>
+    <% end %>

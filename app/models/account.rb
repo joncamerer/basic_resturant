@@ -4,4 +4,6 @@ class Account < ApplicationRecord
     validates :card_number, presence: true, numericality: true, uniqueness: true
     validates :join_date, presence: true
     validates :last_visit, presence: true
+    
+
 end

@@ -10,31 +10,24 @@
     <%= "Account with same card no. #{@account.card_number}" %><br>
     <%= "Account Member ID no. #{@account.member_id}" %><br>
     
-    <%= "Visits: #{@account.visit_count}" %><br>
-    <% if @account.visit_count == 1 %>
-      <%= "Bronze Member" %><br>
-    <% elsif @account.visit_count <= 20 %>
-      <%= "Silver Member" %><br>
-    <% elsif @account.visit_count > 20 %>
-      <%= "Gold Member" %><br>
-    <% end %>
-    
-    <% if @account.loyalty_points == "1" %>
-      <%= "You have credit for #{@account.loyalty_points} free slice!" %><br>
-    <% else %>
-      <%= "You have credit for #{@account.loyalty_points} free slices!" %><br>
-    <% end %>
-    
-    <% if @account.first_name.blank? %>
+    <% if @account.first_name.blank? or @account.last_name.blank? or @account.birthday.blank?  %>
       <%= "Tell us about yourself!" %>
-        <%= form_for @account, url: edit_member_account_path, html: {method: :put} do |f| %>
+        <%= form_for @account, url: member_account_path, html: {method: :put} do |f| %>
           <%= f.label :first_name %>
           <%= f.text_field :first_name%>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name%>
+          <%= f.label :birthday %>
+          <%= f.date_field :birthday%>
           <%= f.submit "submit" %>
         <% end %>
     <% else %>
-      <%= "Hi #{@account.first_name}" %>
+      <%= "Hi #{@account.first_name} #{@account.last_name}!" %><br>
     <% end %>
+    
+    <%= render "rewards" %> 
+    
+
 
 <% else %>
   Sign Up!

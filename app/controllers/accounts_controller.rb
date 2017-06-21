@@ -27,12 +27,15 @@ class AccountsController < ApplicationController
       @accounts = @all.where( "card_number = ?", "#{@card}" )
       # Link loyalty account to member with matching card no.
       @accounts.update_all(member_id: "#{current_member.id}")
+      # Store linked loyalty account in instance variable @account
       @account = Account.find_by("member_id = ?", "#{current_member.id}")
     end
     
   end
   
-  def edit
+  def update
+    @account = Account.find_by("member_id = ?", "#{current_member.id}")
+    @account.update_attributes( update_params )
   end
 
   private
@@ -45,6 +48,10 @@ class AccountsController < ApplicationController
     
     def account_params
       params.require(:account).permit(:visit_count, :loyalty_points, :card_number, :join_date, :last_visit)
+    end
+    
+    def update_params
+      params.require(:account).permit(:first_name, :last_name, :birthday)
     end
 
 end
