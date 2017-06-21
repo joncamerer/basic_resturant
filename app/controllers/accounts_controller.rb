@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  # Comment out to create example Loyalty Accounts
   #before_action :authenticate_member!
   #before_action :only_current_member
   
@@ -11,15 +12,17 @@ class AccountsController < ApplicationController
     @account.save
   end
   
+  # GET to members/:member_id/account
   def show
-    
-    # Link Member to Account based on card number
     @all = Account.all
     @card = current_member.card_number
+    # If no loyalty card no. or loyalty card no. doesn't exist
     if @all.where( "card_number = ?", "#{@card}" ).empty?
       @account = "blank"
+    # If loyalty card no. matches 
     else
       @account = @all.where( "card_number = ?", "#{@card}" )
+      @account.update_all(member_id: "#{current_member.id}")
     end
   end
   
