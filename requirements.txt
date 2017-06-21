@@ -1,6 +1,6 @@
 Loyalty
 
-Fix the "Fo
+Fix the "
 
 Create Accounts db linked to Memeber db by card number
     - Make Accounts Table
@@ -10,9 +10,11 @@ Display account information to the user logged in
         - Register your Account! button
     - Give some kind of visual display of account status 
         - Visit count 
-        - How close user is to reward, punches?, etc.
+        How close user is to reward, punches?, etc.
 Give user ability to edit their account information
-    - Change their password
+    Change their password
+Send us a comment
+    Logged in member can send message/ review about visit
 
 
 

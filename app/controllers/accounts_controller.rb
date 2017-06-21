@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
   #before_action :authenticate_member!
   #before_action :only_current_member
   
+  # New and create actions should happen when card is used
   def new
     @account = Account.new
   end
@@ -16,14 +17,19 @@ class AccountsController < ApplicationController
   def show
     @all = Account.all
     @card = current_member.card_number
+    
     # If no loyalty card no. or loyalty card no. doesn't exist
     if @all.where( "card_number = ?", "#{@card}" ).empty?
       @account = "blank"
     # If loyalty card no. matches 
     else
-      @account = @all.where( "card_number = ?", "#{@card}" )
-      @account.update_all(member_id: "#{current_member.id}")
+      # Find loyalty account with matching card no.
+      @accounts = @all.where( "card_number = ?", "#{@card}" )
+      # Link loyalty account to member with matching card no.
+      @accounts.update_all(member_id: "#{current_member.id}")
+      @account = Account.find_by("member_id = ?", "#{current_member.id}")
     end
+    
   end
   
   def edit
