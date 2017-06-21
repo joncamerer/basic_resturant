@@ -16,8 +16,11 @@ class AccountsController < ApplicationController
     # Link Member to Account based on card number
     @all = Account.all
     @card = current_member.card_number
-    @account = @all.where( "card_number = ?", "#{@card}" )
-    
+    if @all.where( "card_number = ?", "#{@card}" ).empty?
+      @account = "blank"
+    else
+      @account = @all.where( "card_number = ?", "#{@card}" )
+    end
   end
   
   def edit
