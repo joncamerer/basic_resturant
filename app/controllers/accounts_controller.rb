@@ -15,17 +15,18 @@ class AccountsController < ApplicationController
   
   # GET to members/:member_id/account
   def show
-    @all = Account.all
     @card = current_member.card_number
     
-    # Find loyalty account with matching card no.
-    @accounts = @all.where( "card_number = ?", "#{@card}" )
-    # Link loyalty account to member with matching card no.
-    @accounts.update_all(member_id: "#{current_member.id}")
-    # Store linked loyalty account in instance variable @account
-    @account = Account.find_by("member_id = ?", "#{current_member.id}")
-
+    # Link Member to Account by Loyalty Card number upon first login
+    if Account.where( "card_number = ?", "#{@card}" ).where( :member_id => nil ).exists?
+      # Find loyalty account with matching card no.
+      @accounts = Account.where( "card_number = ?", "#{@card}" )
+      # Link loyalty account to member with matching card no.
+      @accounts.update_all(member_id: "#{current_member.id}")
+    end
     
+    @account = Account.find_by("member_id = ?", "#{current_member.id}")
+    @punches = @account.visit_count.digits.first
   end
   
   def update

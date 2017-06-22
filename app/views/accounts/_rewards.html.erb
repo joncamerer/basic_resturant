@@ -1,5 +1,7 @@
 <%= "Rewards Partial" %><br>   
    
+   <!-- ___ visits until (next level) -->
+   
     <%= "Visits: #{@account.visit_count}" %><br>
     <% if @account.visit_count == 1 %>
       <%= "Bronze Member" %><br>
@@ -15,4 +17,4 @@
       <%= "You have credit for #{@account.loyalty_points} free slices!" %><br>
     <% end %>
     
-    <%= @account.visit_count.digits.first %>
+    <%= @punches %>
