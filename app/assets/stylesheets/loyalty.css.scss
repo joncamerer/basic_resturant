@@ -1,0 +1,54 @@
+.gray-punch {
+    color: gray;
+}
+
+.red-punch {
+    color: #961515;
+}
+
+.material-icons.md-36 { 
+    font-size: 36px; 
+}
+
+.loyalty-left {
+    float: left;
+    @media screen and (min-width: 480px) and (max-width: 609px) {
+        margin-left: 80px;
+    }
+}
+
+.loyalty-right {
+    float: right;
+    @media screen and (min-width: 315px) and (max-width: 479px) {
+        float: left;
+    }
+    @media screen and (min-width: 480px) and (max-width: 609px) {
+        float: left;
+        margin-left: 80px;
+    }
+}
+
+.well.loyalty {
+    width: 240px !important;
+    //margin-left: 25px;
+    
+    @media screen and (max-width: 480px) {
+        margin-left: 15px;
+    }
+    
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+        margin-left: 20px;
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        margin-left: 45px;
+    }
+    
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        margin-left: 25px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        margin-left: 55px;
+    }
+}

@@ -1,7 +1,6 @@
-<%= "Rewards Partial" %><br>   
-   
-   <!-- ___ visits until (next level) -->
-   
+<div class="well row">
+
+  <div class="col-sm-6 loyalty-left">
     <%= "Visits: #{@account.visit_count}" %><br>
     <% if @account.visit_count == 1 %>
       <%= "Bronze Member" %><br>
@@ -16,5 +15,18 @@
     <% else %>
       <%= "You have credit for #{@account.loyalty_points} free slices!" %><br>
     <% end %>
-    
-    <%= @punches %>
+  </div>
+ 
+  <div class="col-sm-6 loyalty-right">
+    <h3 class="text-center"><%= "#{10 - @punches} visits until your next reward!" %></h3>
+    <div class="well loyalty col-sm-offset-2">
+      <% @punches.times do || %>
+        <i class="material-icons md-36 red-punch">local_pizza</i>
+      <% end %>
+      <% (10 - @punches).times do || %>
+        <i class="material-icons md-36 gray-punch">local_pizza</i>
+      <% end %><br>
+    </div>
+  </div>
+   
+</div>

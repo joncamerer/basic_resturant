@@ -23,6 +23,8 @@ class AccountsController < ApplicationController
       @accounts = Account.where( "card_number = ?", "#{@card}" )
       # Link loyalty account to member with matching card no.
       @accounts.update_all(member_id: "#{current_member.id}")
+      reg_point = @accounts.find_by(member_id: "#{current_member.id}")
+      reg_point.update(loyalty_points: "#{reg_point.loyalty_points + 1}")
     end
     
     @account = Account.find_by("member_id = ?", "#{current_member.id}")
