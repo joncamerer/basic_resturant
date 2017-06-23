@@ -1,16 +1,18 @@
 Loyalty
+-Fix the Loyalty URL paths / params
 
-Fix the "
-
-Create Accounts db linked to Memeber db by card number
-    - Make Accounts Table
-    - Accounts should exist Apart from Members
-Display account information to the user logged in
-    - Loyalty accounts can be "registered" to a logged in member
-        - Register your Account! button
-    - Give some kind of visual display of account status 
-        - Visit count 
-        How close user is to reward, punches?, etc.
+-Create Accounts db linked to Memeber db by card number
+    -Make Accounts Table
+    -Accounts should exist Apart from Members
+-Display account information to the user logged in
+    -Loyalty accounts can be "registered" to a logged in member
+        -Register your Account! button
+        -Add a loyalty point for registering
+    -Give some kind of visual display of account status 
+        -Visit count 
+        -How close user is to reward, punches?, etc.
+        Set up tiers for Loyalty Accounts
+        
 Give user ability to edit their account information
     Change their password
 Send us a comment

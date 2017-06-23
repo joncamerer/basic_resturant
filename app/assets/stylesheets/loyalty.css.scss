@@ -28,9 +28,9 @@
     }
 }
 
+// Loyalty well needs custom dynamic margins due to its fixed size
 .well.loyalty {
     width: 240px !important;
-    //margin-left: 25px;
     
     @media screen and (max-width: 480px) {
         margin-left: 15px;
